@@ -24,6 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _Person_QNAME = new QName("http://c_cxf_04.demo.ws.ahpu.edu.cn/", "Person");
     private final static QName _FindPerson_QNAME = new QName("http://c_cxf_04.demo.ws.ahpu.edu.cn/", "findPerson");
     private final static QName _PrintPersonInfo_QNAME = new QName("http://c_cxf_04.demo.ws.ahpu.edu.cn/", "printPersonInfo");
     private final static QName _FindPersonResponse_QNAME = new QName("http://c_cxf_04.demo.ws.ahpu.edu.cn/", "findPersonResponse");
@@ -34,14 +35,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Person }
-     * 
-     */
-    public Person createPerson() {
-        return new Person();
     }
 
     /**
@@ -61,11 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PrintPersonInfo }
+     * Create an instance of {@link Person }
      * 
      */
-    public PrintPersonInfo createPrintPersonInfo() {
-        return new PrintPersonInfo();
+    public Person createPerson() {
+        return new Person();
     }
 
     /**
@@ -74,6 +67,23 @@ public class ObjectFactory {
      */
     public PrintPersonInfoResponse createPrintPersonInfoResponse() {
         return new PrintPersonInfoResponse();
+    }
+
+    /**
+     * Create an instance of {@link PrintPersonInfo }
+     * 
+     */
+    public PrintPersonInfo createPrintPersonInfo() {
+        return new PrintPersonInfo();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Person }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://c_cxf_04.demo.ws.ahpu.edu.cn/", name = "Person")
+    public JAXBElement<Person> createPerson(Person value) {
+        return new JAXBElement<Person>(_Person_QNAME, Person.class, null, value);
     }
 
     /**
